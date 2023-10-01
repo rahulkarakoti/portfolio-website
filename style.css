@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400; 500; 600; 700; 800; 900& display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dekko&family=Poppins:wght@300&display=swap');
 
 * {
     margin: 0;
@@ -9,6 +9,9 @@
     outline: none;
     scroll-behavior: smooth;
     font-family: 'poppins', sans-serif;
+    
+    /* font-family: 'Dekko', cursive; */
+
 }
 
 :root {
@@ -83,7 +86,7 @@ section {
 
 .home-img img {
     width: 35vw;
-    animation: floatImage 4s ease-in-out infinite;
+    animation: floatImage 3s ease-in infinite;
 }
 
 @keyframes floatImage{
