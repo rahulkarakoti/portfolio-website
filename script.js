@@ -63,3 +63,17 @@ const typed = new Typed('.multiple-text', {
     loop: true
 });
 
+
+
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+document.documentElement.style.setProperty('--main-color', getRandomColor());
+
+// Change the background color of the body element with a random color on page load
