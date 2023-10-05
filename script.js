@@ -67,12 +67,23 @@ const typed = new Typed('.multiple-text', {
 
 
 // Change the background color of the body element with a random color on page load
-function getRandomColor() {
+function getRandomVibrantColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
+    do {
+        color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+    } while (!isColorVibrant(color));
     return color;
 }
-document.documentElement.style.setProperty('--main-color', getRandomColor());
+
+function isColorVibrant(hexColor) {
+    const r = parseInt(hexColor.slice(1, 3), 16);
+    const g = parseInt(hexColor.slice(3, 5), 16);
+    const b = parseInt(hexColor.slice(5, 7), 16);
+    const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+    return brightness > 150;
+}
+document.documentElement.style.setProperty('--main-color', getRandomVibrantColor());
