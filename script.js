@@ -66,6 +66,7 @@ const typed = new Typed('.multiple-text', {
 
 
 
+// Change the background color of the body element with a random color on page load
 function getRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
@@ -75,5 +76,3 @@ function getRandomColor() {
     return color;
 }
 document.documentElement.style.setProperty('--main-color', getRandomColor());
-
-// Change the background color of the body element with a random color on page load
